@@ -17,7 +17,7 @@ class BounceBattle
         // if you already cloned the repo you can delete that from your machine 
         // it would probably be helpful if we all met on some day soon and talked about 
         // how working together is actually going to work and then we can get everyone set up and 
-        // on the same. 
+        // on the same page. 
     }//end main
 }//end class
 
