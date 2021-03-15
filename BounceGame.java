@@ -10,15 +10,31 @@ Assignment: group project 1
 
 class BounceBattle
 {
+    public static void Birdseyetictac()
+    {
+        //TODO
+    }
+    public static void lucky13()
+    {
+        //TODO
+    }
+    public static void greatwall()
+    {
+        //TODO
+    }
+    public static void pointball()
+    {
+        //TODO
+    }
+
     public static void main(String[] args)
     {
-        //lets hold off on the actual coding part 
-        // i want to gwt our rules down then kinda spread the work
-        // if you already cloned the repo you can delete that from your machine 
-        // it would probably be helpful if we all met on some day soon and talked about 
-        // how working together is actually going to work and then we can get everyone set up and 
-        // on the same page.
-
+        // so here is what im thinking 
+        // once we get the choice from the user we break out into these if statements
+        // then in each we call a function corrisponding to the game mode
+        // everything will be done within the function and return nothings
+        // we print the game board to the terminal with the appropriate array
+        // then we print out thanks and good bye
 
         Scanner input = new Scanner(System.in);
         System.out.println("\nHello! welcome to bounce battle!\nThe game mode you pick will decide what the rules will be.");
@@ -30,11 +46,22 @@ class BounceBattle
         int choice  = input.nextInt();
         System.out.println(choice);
 
-
-
-
-
-
+        if(choice == 1)
+        {
+            Birdseyetictac();
+        }
+        if(choice == 2)
+        {
+            lucky13();
+        }
+        if(choice == 3)
+        {
+            greatwall();
+        }
+        if(choice == 4)
+        {
+            pointball();
+        }
     }//end main
 }//end class
 
