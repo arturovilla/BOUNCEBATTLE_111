@@ -13,6 +13,7 @@ class BounceBattle
     public static void Birdseyetictac()
     {
         //TODO
+        // comment 
     }
     public static void lucky13()
     {
@@ -29,7 +30,7 @@ class BounceBattle
 
     public static void main(String[] args)
     {
-        // so here is what im thinking 
+        // so here is what im thinking
         // once we get the choice from the user we break out into these if statements
         // then in each we call a function corrisponding to the game mode
         // everything will be done within the function and return nothings
@@ -64,4 +65,3 @@ class BounceBattle
         }
     }//end main
 }//end class
-
