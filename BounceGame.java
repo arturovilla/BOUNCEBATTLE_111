@@ -4,12 +4,25 @@ team members: Arturo Villalobos
 Date: 3-8-21
 Assignment: group project 1
 */
-
 /*Instructions: Refer to the instructions on Canvas.
 */
 
 class BounceBattle
 {
+    public static void printGameTitle()
+    {
+        System.out.println("                    ___           ___           ___           ___           ___                         ___                                                 ___     ");
+        System.out.println("     _____         /  /\\         /__/\\         /__/\\         /  /\\         /  /\\         _____         /  /\\          ___         ___                      /  /\\    ");
+        System.out.println("    /  /::\\       /  /::\\        \\  \\:\\        \\  \\:\\       /  /:/        /  /:/_       /  /::\\       /  /::\\        /  /\\       /  /\\                    /  /:/_   ");
+        System.out.println("   /  /:/\\:\\     /  /:/\\:\\        \\  \\:\\        \\  \\:\\     /  /:/        /  /:/ /\\     /  /:/\\:\\     /  /:/\\:\\      /  /:/      /  /:/    ___     ___    /  /:/ /\\  ");
+        System.out.println("  /  /:/~/::\\   /  /:/  \\:\\   ___  \\  \\:\\   _____\\__\\:\\   /  /:/  ___   /  /:/ /:/_   /  /:/~/::\\   /  /:/~/::\\    /  /:/      /  /:/    /__/\\   /  /\\  /  /:/ /:/_ ");
+        System.out.println(" /__/:/ /:/\\:| /__/:/ \\__\\:\\ /__/\\  \\__\\:\\ /__/::::::::\\ /__/:/  /  /\\ /__/:/ /:/ /\\ /__/:/ /:/\\:| /__/:/ /:/\\:\\  /  /::\\     /  /::\\    \\  \\:\\ /  /:/ /__/:/ /:/ /\\");
+        System.out.println(" \\  \\:\\/:/~/:/ \\  \\:\\ /  /:/ \\  \\:\\ /  /:/ \\  \\:\\~~\\~~\\/ \\  \\:\\ /  /:/ \\  \\:\\/:/ /:/ \\  \\:\\/:/~/:/ \\  \\:\\/:/__\\/ /__/:/\\:\\   /__/:/\\:\\    \\  \\:\\  /:/  \\  \\:\\/:/ /:/");
+        System.out.println("  \\  \\::/ /:/   \\  \\:\\  /:/   \\  \\:\\  /:/   \\  \\:\\  ~~~   \\  \\:\\  /:/   \\  \\::/ /:/   \\  \\::/ /:/   \\  \\::/      \\__\\/  \\:\\  \\__\\/  \\:\\    \\  \\:\\/:/    \\  \\::/ /:/ ");
+        System.out.println("   \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\        \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\/:/     \\  \\:\\           \\  \\:\\      \\  \\:\\    \\  \\::/      \\  \\:\\/:/  ");
+        System.out.println("    \\  \\::/       \\  \\::/       \\  \\::/       \\  \\:\\        \\  \\::/       \\  \\::/       \\  \\::/       \\  \\:\\           \\__\\/       \\__\\/     \\__\\/        \\  \\::/   ");
+        System.out.println("     \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/                                               \\__\\/    ");
+    }
     public static void Birdseyetictac()
     {
         //TODO
@@ -21,6 +34,7 @@ class BounceBattle
     public static void greatwall()
     {
         //TODO
+
     }
     public static void pointball()
     {
@@ -37,7 +51,10 @@ class BounceBattle
         // then we print out thanks and good bye
 
         Scanner input = new Scanner(System.in);
-        System.out.println("\nHello! welcome to bounce battle!\nThe game mode you pick will decide what the rules will be.");
+
+        printGameTitle();
+
+        //System.out.println("\nHello! welcome to bounce battle!\nThe game mode you pick will decide what the rules will be.");
         System.out.println("\n(1) BIRD'S EYE TIC-TAC-TOE BATTLE!\n\t2 players -- Be the first to get three balls in-a-row as seen from above the cube;\n\tonly the top balls in any space count (block your opponent!).");
         System.out.println("\n(2) LUCKY 13 BATTLE!\n\t2 players -- Be the first to bounce 13 balls into any location in the cube.");
         System.out.println("\n(3) GREAT WALL BATTLE\n\t2 players -- Be the first to bounce nine balls into the wall closest to you.\n\tIn this battle, it does not matter which ball colors are used.\n\tIf you bounce in your opponent’s wall, however, the ball stays in place.");
@@ -62,6 +79,10 @@ class BounceBattle
         {
             pointball();
         }
+
+
+
+        System.out.println("Thank you for playing bounce battle would you like to play again?");
     }//end main
 }//end class
 
