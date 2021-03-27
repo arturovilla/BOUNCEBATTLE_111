@@ -12,7 +12,40 @@ class BounceBattle
 {
 
     
-    public static void printcube1()
+    public static void printcube_joni()
+    {
+        System.out.println("        ___                   ___                  ___                              ");
+        System.out.println("       /L  /\\               /M  /\\               /R  /\\                          ");
+        System.out.println("      /___/  \\             /___/  \\             /___/  \\                         ");
+        System.out.println("     /   /\\  /\\           /   /\\  /\\           /   /\\  /\\                     ");
+        System.out.println("    /___/  \\/  \\         /___/  \\/  \\         /___/  \\/  \\                    ");
+        System.out.println("   /   /\\  /\\  /\\       /   /\\  /\\  /\\       /   /\\  /\\  /\\                ");
+        System.out.println("  /___/  \\/  \\/  \\     /___/  \\/  \\/  \\     /___/  \\/  \\/  \\               ");
+        System.out.println("  \\   \\  /\\  /\\  /     \\   \\  /\\  /\\  /     \\   \\  /\\  /\\  /          ");
+        System.out.println("   \\___\\/  \\/  \\/       \\___\\/  \\/  \\/       \\___\\/  \\/  \\/           ");
+        System.out.println("    \\   \\  /\\  /         \\   \\  /\\  /         \\   \\  /\\  /            ");
+        System.out.println("     \\___\\/  \\/           \\___\\/  \\/           \\___\\/  \\/                 ");
+        System.out.println("      \\   \\  /             \\   \\  /             \\   \\  /                     ");
+        System.out.println("       \\___\\/               \\___\\/               \\___\\/                     ");
+    }
+    public static void printcube_joni(String[][]ary1, String[][]ary2, String[][]ary3)
+    {
+        System.out.println("        ___                            ___                                ___                                                                              ");
+        System.out.println("       /L  /\\                        /M  /\\                             /R  /\\                                                                                   ");
+        System.out.println("      /___/  \\                      /___/  \\                           /___/  \\                                                                                                   ");
+        System.out.println("     /   /\\"+ary3[0][0]+" /\\                    /   /\\"+ary3[0][1]+" /\\                         /   /\\"+ary3[0][2]+" /\\                                                           ");
+        System.out.println("    /___/  \\/  \\                  /___/  \\/  \\                       /___/  \\/  \\                                                                                                 ");
+        System.out.println("   /   /\\"+ary3[1][0]+" /\\"+ary2[0][0]+" /\\                /   /\\"+ary3[1][1]+" /\\"+ary2[0][1]+" /\\                     /   /\\"+ary3[1][2]+" /\\"+ary2[0][2]+" /\\                ");
+        System.out.println("  /___/  \\/  \\/  \\              /___/  \\/  \\/  \\                   /___/  \\/  \\/  \\                                                                                                ");
+        System.out.println("  \\   \\"+ary3[2][0]+" /\\"+ary2[1][0]+" /\\"+ary1[0][0]+" /              \\   \\"+ary3[2][1]+" /\\"+ary2[1][1]+" /\\"+ary1[0][1]+" /                   \\   \\"+ary3[2][2]+" /\\"+ary2[1][2]+" /\\"+ary1[0][2]+" / ");
+        System.out.println("   \\___\\/  \\/  \\/                \\___\\/  \\/  \\/                     \\___\\/  \\/  \\/                                                                                                ");
+        System.out.println("    \\   \\"+ary2[2][0]+" /\\"+ary1[1][0]+" /                  \\   \\"+ary2[2][1]+" /\\"+ary1[1][1]+" /                       \\   \\"+ary2[2][2]+" /\\"+ary1[1][2]+" /                ");
+        System.out.println("     \\___\\/  \\/                    \\___\\/  \\/                         \\___\\/  \\/                                                                                       ");
+        System.out.println("      \\   \\"+ary1[2][0]+" /                      \\   \\"+ary1[2][1]+" /                           \\   \\"+ary1[2][2]+" /                                                       ");
+        System.out.println("       \\___\\/                        \\___\\/                             \\___\\/                                                                                        ");
+    }
+
+    public static void printcube_ruleArt()
     {
       System.out.println("        ___                   ___                  ___                              ");
       System.out.println("       /1  /\\               /2  /\\               /3  /\\                          ");
@@ -28,7 +61,7 @@ class BounceBattle
       System.out.println("      \\   \\  /             \\   \\  /             \\   \\  /   /_________1-POINTS________                   ");
       System.out.println("       \\___\\/               \\___\\/               \\___\\/    \\                  ");
     }
-    public static void printcube(String[][]ary1,String[][]ary2,String[][]ary3)
+    public static void printcube_art(String[][]ary1,String[][]ary2,String[][]ary3)
     {
       String s1 = "|";
       System.out.println("        ___                            ___                                ___                                                                              ");
@@ -71,11 +104,231 @@ class BounceBattle
     {
         //TODO
     }
-    public static void greatwall()
+    public static void greatwall(Scanner input)
     {
-        //TODO
+      // be the first to bounce nine balls into the wall closest to you.
+      // it doesnt matter which ball colors are used
+      // if you bounce in your opponents wall, the ball stays in place.
+        Random rand = new Random();
+        int shot = 0;
+        int p1numShots = 0;
+        int p2numShots = 0;
+        boolean playingGame = true;
+        int wallChoice = 0;
+        int key = 0;
+        String[][] layer1 = new String[3][3];
+        String[][] layer2 = new String[3][3];
+        String[][] layer3 = new String[3][3];
+        for(int i=0 ; i< layer1.length;i++){
+          for(int j=0; j <layer1.length;j++){
+            layer1[i][j] = " ";
+            layer2[i][j] = " ";
+            layer3[i][j] = " ";
+          }
+        }
+        int p1Score = 0;
+        int p2Score = 0;
 
+        System.out.println("You've chosen the Great Wall Battle!\n");
+        System.out.println("Be the first to bounce nine balls into the wall closest to you!");
+        System.out.println("Player 1 is closest to the left wall and Player 2 is closest to the right wall.");
+        System.out.println("Don't worry, you won't accidentally make it into the middle wall. ");
+        System.out.println("(If the boxes look weird, you may have to make the terminal window larger)");
+        System.out.println();
+        System.out.println("Player 1 will be 'X' and Player 2 will be 'O.' Bounce the ball by typing '1' into the command line. Good luck!");
+        System.out.println();
+        printcube_joni();
+        System.out.println("Player 1 goes first! ");
+        System.out.println();
+        while(playingGame){ // game beginning.
+          System.out.println("Player 1's turn. Press the 1 key to make a shot: ");
+          key = input.nextInt();
+          while(key!=1){
+            System.out.println("Invalid input. Press the 1 key to make a shot: ");
+            key = input.nextInt();
+          }
+          System.out.println();
+          shot = rand.nextInt(10);
+          if(shot>=5){
+            if(layer1[0][0]==" "){
+              layer1[0][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]==" "){
+              layer2[0][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]==" "){
+              layer3[0][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] == " "){
+              layer1[1][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] != " " && layer2[1][0]==" "){
+              layer2[1][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] != " " && layer2[1][0]!=" " && layer3[1][0]==" "){
+              layer3[1][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] != " " && layer2[1][0]!=" " && layer3[1][0]!=" "
+            && layer1[2][0]==" "){
+              layer1[2][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] != " " && layer2[1][0]!=" " && layer3[1][0]!=" "
+            && layer1[2][0]!=" " && layer2[2][0] == " "){
+              layer2[2][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+            else if(layer1[0][0]!=" " && layer2[0][0]!=" " && layer3[0][0]!=" "
+            && layer1[1][0] != " " && layer2[1][0]!=" " && layer3[1][0]!=" "
+            && layer1[2][0]!=" " && layer2[2][0] != " " && layer3[2][0]==" "){
+              layer3[2][0] = "X";
+              p1numShots += 1;
+              p1Score += p1numShots;
+              System.out.println("You made it! You now have " + p1numShots + " balls in.");
+            }
+          } // shot counter else
+          else{
+            System.out.println("You missed! You're still at " + p1numShots + " balls in.");
+          }
+          printcube_joni(layer1, layer2, layer3);
+
+          if(p1numShots >=9){
+            playingGame = false;
+            System.out.println("Player 1 Wins!");
+            break;
+          }
+
+          // player 2 turn.
+          System.out.println("Player 2's turn. Press the 1 key to make a shot: ");
+          key = input.nextInt();
+          while(key!=1){
+            System.out.println("Invalid input. Press the 1 key to make a shot: ");
+            key = input.nextInt();
+          }
+          shot = rand.nextInt(10);
+          System.out.println();
+          if(shot>=5){
+            if(layer1[0][2]==" "){
+              layer1[0][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]==" "){
+              layer2[0][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]==" "){
+              layer3[0][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!= " "
+            && layer1[1][2]==" "){
+              layer1[1][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!=" "
+            && layer1[1][2]!=" " && layer2[1][2] == " "){
+              layer2[1][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!=" "
+            && layer1[1][2]!=" " && layer2[1][2] != " " && layer3[1][2]== " "){
+              layer3[1][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!=" "
+            && layer1[1][2]!=" " && layer2[1][2] != " " && layer3[1][2]!= " "
+            && layer1[2][2] == " "){
+              layer1[2][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!=" "
+            && layer1[1][2]!=" " && layer2[1][2] != " " && layer3[1][2]!= " "
+            && layer1[2][2] != " " && layer2[2][2] == " "){
+              layer2[2][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+            else if(layer1[0][2]!=" " && layer2[0][2]!=" " && layer3[0][2]!=" "
+            && layer1[1][2]!=" " && layer2[1][2] != " " && layer3[1][2]!= " "
+            && layer1[2][2] != " " && layer2[2][2] != " " && layer3[2][2]== " "){
+              layer3[2][2] = "O";
+              p2numShots += 1;
+              p2Score += p2numShots;
+              System.out.println("You made it! You now have " + p2numShots + " balls in.");
+            }
+          }
+          // shot counter else
+          else{
+            System.out.println("You missed! You're still at " + p2numShots + " balls in.");
+          }
+          printcube_joni(layer1, layer2, layer3);
+
+          if(p1numShots >=9){
+            playingGame = false;
+            System.out.println("Player 1 Wins!");
+          }
+          else if(p2numShots >=9){
+            playingGame = false;
+            System.out.println("Player 2 Wins!");
+          }
+        } // while loop end
+        // System.out.println();
+        // String answer = "";
+        // answer = in.nextLine();
+        // System.out.println("Would you like to play again? Press Y for yes, any key for no: ");
+        // answer = in.nextLine();
+        // if(answer.equals("y") || answer.equals("Y")){
+        //   greatwall();
+        // }
+        // else{
+        //   System.out.println();
+        //   System.out.println("Thanks for playing!");
+        // }
+        System.out.println("Thanks for playing!");
     }
+    
     public static void pointball(Scanner input)
     {
         //TODO
@@ -99,7 +352,7 @@ class BounceBattle
         int p2score = 0;
         System.out.println("Hello, below is how points are given the back 'wall' is 3 points, \nthe middle 'wall' is worth 2 points and so on.");
         System.out.println("Player 1 will go first denoted by (X) , then player 2 denoted by (O), the first person two get 21 points wins!! \nPick enter a number 1-9 to 'aim' for that column ");
-        printcube1();
+        printcube_ruleArt();
         while(gamestate)
         {
             System.out.println("Player 1: ");
@@ -338,7 +591,7 @@ class BounceBattle
                     System.out.println("Sorry looks like you missed!!!");
                 }
             }
-            printcube(l1,l2,l3);
+            printcube_art(l1,l2,l3);
 
             System.out.println("Player 2: ");
             choice = input.nextInt();
@@ -576,7 +829,7 @@ class BounceBattle
                     System.out.println("Sorry looks like you missed!!!");
                 }
             }
-            printcube(l1,l2,l3);
+            printcube_art(l1,l2,l3);
 
             if(p1score>=21){
                 gamestate=false;
@@ -593,46 +846,40 @@ class BounceBattle
 
     public static void main(String[] args)
     {
-        // so here is what im thinking 
-        // once we get the choice from the user we break out into these if statements
-        // then in each we call a function corrisponding to the game mode
-        // everything will be done within the function and return nothings
-        // we print the game board to the terminal with the appropriate array
-        // then we print out thanks and good bye
-
         Scanner input = new Scanner(System.in);
 
         printGameTitle();
-
+        int playagain = 1;
+        while(playagain == 1)
+        {
         //System.out.println("\nHello! welcome to bounce battle!\nThe game mode you pick will decide what the rules will be.");
-        System.out.println("\n(1) BIRD'S EYE TIC-TAC-TOE BATTLE!\n\t2 players -- Be the first to get three balls in-a-row as seen from above the cube;\n\tonly the top balls in any space count (block your opponent!).");
-        System.out.println("\n(2) LUCKY 13 BATTLE!\n\t2 players -- Be the first to bounce 13 balls into any location in the cube.");
-        System.out.println("\n(3) GREAT WALL BATTLE\n\t2 players -- Be the first to bounce nine balls into the wall closest to you.\n\tIn this battle, it does not matter which ball colors are used.\n\tIf you bounce in your opponent’s wall, however, the ball stays in place.");
-        System.out.println("\n(4) POINT BALL BATTLE\n\t2 players -- Be the first to score 21 points.  Points are scored by bouncing balls into the cube.\n\tThe front vertical wall is worth one point per ball, the middle vertical wall is worth two points per ball and \n\tthe back vertical wall is worth three points per ball.\n\tEach player gets to bounce three balls per turn.  Each player gets the same amount of turns.\n\tAfter each round, add up the score and play additional rounds as necessary until there is a winner.");
-        System.out.println("\nPlease choose from one of the game modes above. (enter 1-4)");
-        int choice  = input.nextInt();
-        System.out.println(choice);
-
-        if(choice == 1)
-        {
-            Birdseyetictac();
-        }
-        if(choice == 2)
-        {
-            lucky13();
-        }
-        if(choice == 3)
-        {
-            greatwall();
-        }
-        if(choice == 4)
-        {
-            pointball(input);
-        }
-
-
-
-        System.out.println("Thank you for playing bounce battle would you like to play again?");
+            System.out.println("\n(1) BIRD'S EYE TIC-TAC-TOE BATTLE!\n\t2 players -- Be the first to get three balls in-a-row as seen from above the cube;\n\tonly the top balls in any space count (block your opponent!).");
+            System.out.println("\n(2) LUCKY 13 BATTLE!\n\t2 players -- Be the first to bounce 13 balls into any location in the cube.");
+            System.out.println("\n(3) GREAT WALL BATTLE\n\t2 players -- Be the first to bounce nine balls into the wall closest to you.\n\tIn this battle, it does not matter which ball colors are used.\n\tIf you bounce in your opponent’s wall, however, the ball stays in place.");
+            System.out.println("\n(4) POINT BALL BATTLE\n\t2 players -- Be the first to score 21 points.  Points are scored by bouncing balls into the cube.\n\tThe front vertical wall is worth one point per ball, the middle vertical wall is worth two points per ball and \n\tthe back vertical wall is worth three points per ball.\n\tEach player gets to bounce three balls per turn.  Each player gets the same amount of turns.\n\tAfter each round, add up the score and play additional rounds as necessary until there is a winner.");
+            System.out.println("\nPlease choose from one of the game modes above. (enter 1-4)");
+            int choice  = input.nextInt();
+        
+       
+            if(choice == 1)
+            {
+                Birdseyetictac();
+            }
+            if(choice == 2)
+            {
+                lucky13();
+            }
+            if(choice == 3)
+            {
+                greatwall(input);
+            }
+            if(choice == 4)
+            {
+                pointball(input);
+            }
+            System.out.println("Thank you for playing bounce battle would you like to play again? (1 = yes / 0 = no)");
+            playagain = input.nextInt();
+        }//endof while loop
     }//end main
 }//end class
 
