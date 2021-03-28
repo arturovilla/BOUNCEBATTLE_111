@@ -10,6 +10,22 @@ Assignment: group project 1
 
 class BounceBattle
 {
+    public static void printcube_simran()
+    {
+        System.out.println("        ___                   ___                  ___                              ");
+        System.out.println("       /   /\\               /   /\\               /   /\\                          ");
+        System.out.println("      /___/  \\             /___/  \\             /___/  \\                         ");
+        System.out.println("     /   /\\  /\\           /   /\\  /\\           /   /\\  /\\                     ");
+        System.out.println("    /___/  \\/  \\         /___/  \\/  \\         /___/  \\/  \\                    ");
+        System.out.println("   /   /\\  /\\  /\\       /   /\\  /\\  /\\       /   /\\  /\\  /\\                ");
+        System.out.println("  /___/  \\/  \\/  \\     /___/  \\/  \\/  \\     /___/  \\/  \\/  \\               ");
+        System.out.println("  \\   \\  /\\  /\\  /     \\   \\  /\\  /\\  /     \\   \\  /\\  /\\  /          ");
+        System.out.println("   \\___\\/  \\/  \\/       \\___\\/  \\/  \\/       \\___\\/  \\/  \\/           ");
+        System.out.println("    \\   \\  /\\  /         \\   \\  /\\  /         \\   \\  /\\  /            ");
+        System.out.println("     \\___\\/  \\/           \\___\\/  \\/           \\___\\/  \\/                 ");
+        System.out.println("      \\   \\  /             \\   \\  /             \\   \\  /                     ");
+        System.out.println("       \\___\\/               \\___\\/               \\___\\/                     ");
+    }
 
     
     public static void printcube_joni()
@@ -78,6 +94,18 @@ class BounceBattle
       System.out.println("      \\   \\"+ary1[2][0]+" /                      \\   \\"+ary1[2][1]+" /                           \\   \\"+ary1[2][2]+" /                                                       ");
       System.out.println("       \\___\\/                        \\___\\/                             \\___\\/                                                                                        ");
     }
+    
+    public static void printcubejasmine(String[][] ary)
+    {
+        System.out.println("1   "+ ary[0][0]+"   |2  "+ary[0][1]+"   |3   "+ary[0][2]+"  ");
+        System.out.println("        |       |       ");
+        System.out.println("________|_______|_______");
+        System.out.println("4   "+ ary[1][0]+"   |5  "+ary[1][1]+"   |6   "+ary[1][2]+"  ");
+        System.out.println("        |       |       ");
+        System.out.println("________|_______|_______");
+        System.out.println("7   "+ ary[2][0]+"   |8  "+ary[2][1]+"   |9   "+ary[2][2]+"  ");
+        System.out.println("        |       |       ");
+    }
 
 
 
@@ -96,14 +124,847 @@ class BounceBattle
         System.out.println("    \\  \\::/       \\  \\::/       \\  \\::/       \\  \\:\\        \\  \\::/       \\  \\::/       \\  \\::/       \\  \\:\\           \\__\\/       \\__\\/     \\__\\/        \\  \\::/   ");
         System.out.println("     \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/         \\__\\/                                               \\__\\/    ");
     }
-    public static void Birdseyetictac()
+    public static void Birdseyetictac(Scanner input)
     {
         //TODO
-    }
-    public static void lucky13()
+        Random rand = new Random();
+        System.out.println("Hello welcome to tik-tak-toe!\nPlayer 1 will go first and be denoted by (X),Player 2 will be denoted (O).");
+        int counter1 =0;
+        int counter2 =0;
+        int counter3 =0;
+        int counter4 =0;
+        int counter5 =0;
+        int counter6 =0;
+        int counter7 =0;
+        int counter8 =0;
+        int counter9 =0;
+        int chance = 0;
+        String [][]gameboard = new String[3][3];
+        boolean gamestate = true;
+        for(int i =0 ; i< gameboard.length;i++)
+        {
+            for(int j = 0; j <gameboard.length;j++)
+            {
+                gameboard[i][j] = " ";
+            }
+        }
+        System.out.println("Choose a column (1-9)");
+        printcubejasmine(gameboard);
+        int choice = 0;
+        while(gamestate)
+        {
+            System.out.println("Player 1: ");
+            choice = input.nextInt(); 
+            if(choice == 1){//ary[0][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][0] = "X";
+                    counter1++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 2){//ary[0][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][1] = "X";
+                    counter2++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 3){//ary[0][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][2] = "X";
+                    counter3++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 4){//ary[1][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][0] = "X";
+                    counter4++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 5){//ary[1][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][1] = "X";
+                    counter5++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 6){//ary[1][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][2] = "X";
+                    counter6++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 7){//ary[2][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][0] = "X";
+                    counter7++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 8){//ary[2][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][1] = "X";
+                    counter8++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 9){//ary[2][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][2] = "X";
+                    counter9++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            printcubejasmine(gameboard);
+
+            System.out.println("Player 2: ");
+            choice = input.nextInt();
+            if(choice == 1){//ary[0][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][0] = "O";
+                    counter1++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 2){//ary[0][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][1] = "O";
+                    counter2++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 3){//ary[0][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[0][2] = "O";
+                    counter3++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 4){//ary[1][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][0] = "O";
+                    counter4++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 5){//ary[1][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][1] = "O";
+                    counter5++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 6){//ary[1][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[1][2] = "O";
+                    counter6++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 7){//ary[2][0]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][0] = "O";
+                    counter7++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 8){//ary[2][1]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][1] = "O";
+                    counter8++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            if(choice == 9){//ary[2][2]
+                chance = rand.nextInt(10);
+                if(chance >=5 && counter1 <=2)
+                {
+                    System.out.println("You made it!");
+                    gameboard[2][2] = "O";
+                    counter9++;
+                }
+                else{
+                    System.out.println("You missed!!!");
+                }
+            }
+            printcubejasmine(gameboard);
+            //plauyer 1 winning block
+            if( (gameboard[0][0].equals("X") && gameboard[0][1].equals("X") && gameboard[0][2].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[1][0].equals("X") && gameboard[1][1].equals("X") && gameboard[1][2].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[2][0].equals("X") && gameboard[2][1].equals("X") && gameboard[2][2].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][0].equals("X") && gameboard[1][0].equals("X") && gameboard[2][0].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][1].equals("X") && gameboard[1][1].equals("X") && gameboard[2][1].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][2].equals("X") && gameboard[1][2].equals("X") && gameboard[2][2].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][2].equals("X") && gameboard[1][1].equals("X") && gameboard[2][0].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][0].equals("X") && gameboard[1][1].equals("X") && gameboard[2][2].equals("X")) ){
+                System.out.println("Player 1 has won !!!!!");
+                gamestate = false;
+            }
+            //player 2 winning block
+            if( (gameboard[0][0].equals("O") && gameboard[0][1].equals("O") && gameboard[0][2].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[1][0].equals("O") && gameboard[1][1].equals("O") && gameboard[1][2].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[2][0].equals("O") && gameboard[2][1].equals("O") && gameboard[2][2].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][0].equals("O") && gameboard[1][0].equals("O") && gameboard[2][0].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][1].equals("O") && gameboard[1][1].equals("O") && gameboard[2][1].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][2].equals("O") && gameboard[1][2].equals("O") && gameboard[2][2].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][2].equals("O") && gameboard[1][1].equals("O") && gameboard[2][0].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+            if( (gameboard[0][0].equals("O") && gameboard[1][1].equals("O") && gameboard[2][2].equals("O")) ){
+                System.out.println("Player 2 has won !!!!!");
+                gamestate = false;
+            }
+        }//end of while 
+    }//end of ticktaktoe
+
+
+    public static void lucky13(Scanner input)
     {
         //TODO
+        Random rand = new Random();
+        int chance = 0;
+        boolean gamestate = true;
+        int choice = 0;
+        String[][] l1 = new String[3][3];
+        String[][] l2 = new String[3][3];
+        String[][] l3 = new String[3][3];
+        for(int i =0 ; i< l1.length;i++)
+        {
+            for(int j = 0; j <l1.length;j++)
+            {
+                l1[i][j] = " ";
+                l2[i][j] = " ";
+                l3[i][j] = " ";
+            }
+        }
+        int p1score = 0;
+        int p2score = 0;
+        System.out.println("You've chosen the Lucky 13 Battle!\n");
+          System.out.println("Be the first to bounce 13 balls into any location on the cube!");
+          System.out.println();
+          System.out.println("Player 1 will be 'X' and Player 2 will be 'O.' Bounce the ball by typing '1-9' into the command line. Good luck!");
+          System.out.println();
+        printcube_simran();
+        while(gamestate)
+        {
+            System.out.println("Player 1: ");
+            choice = input.nextInt();
+            if(choice == 1){//only checking arrays ar pos [0][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][0]== " "){
+                        l1[0][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] == " "){
+                        l2[0][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] != " " && l3[0][0] == " "){
+                        l3[0][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] != " " && l3[0][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 2){//only checking arrays ar pos [0][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][1]== " "){
+                        l1[0][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] == " "){
+                        l2[0][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] != " " && l3[0][1] == " "){
+                        l3[0][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] != " " && l3[0][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 3){//only checking arrays ar pos [0][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][2]== " "){
+                        l1[0][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] == " "){
+                        l2[0][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] != " " && l3[0][2] == " "){
+                        l3[0][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] != " " && l3[0][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 4){//only checking arrays ar pos [1][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][0]== " "){
+                        l1[1][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] == " "){
+                        l2[1][0] = "X";
+                        p1score+=2;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] != " " && l3[1][0] == " "){
+                        l3[1][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] != " " && l3[1][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 5){//only checking arrays ar pos [1][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][1]== " "){
+                        l1[1][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] == " "){
+                        l2[1][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] != " " && l3[1][1] == " "){
+                        l3[1][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] != " " && l3[1][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 6){//only checking arrays ar pos [1][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][2]== " "){
+                        l1[1][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] == " "){
+                        l2[1][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] != " " && l3[1][2] == " "){
+                        l3[1][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] != " " && l3[1][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 7){//only checking arrays ar pos [2][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][0]== " "){
+                        l1[2][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] == " "){
+                        l2[2][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] != " " && l3[2][0] == " "){
+                        l3[2][0] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] != " " && l3[2][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 8){//only checking arrays ar pos [2][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][1]== " "){
+                        l1[2][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] == " "){
+                        l2[2][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] != " " && l3[2][1] == " "){
+                        l3[2][1] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] != " " && l3[2][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 9){//only checking arrays ar pos [2][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][2]== " "){
+                        l1[2][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] == " "){
+                        l2[2][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] != " " && l3[2][2] == " "){
+                        l3[2][2] = "X";
+                        p1score+=1;
+                        System.out.println("Player 1 score is now: " + p1score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] != " " && l3[2][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            printcube_art(l1,l2,l3);
+
+            System.out.println("Player 2: ");
+            choice = input.nextInt();
+            if(choice == 1){//only checking arrays ar pos [0][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][0]== " "){
+                        l1[0][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] == " "){
+                        l2[0][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] != " " && l3[0][0] == " "){
+                        l3[0][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][0] != " " && l2[0][0] != " " && l3[0][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 2){//only checking arrays ar pos [0][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][1]== " "){
+                        l1[0][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] == " "){
+                        l2[0][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] != " " && l3[0][1] == " "){
+                        l3[0][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][1] != " " && l2[0][1] != " " && l3[0][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 3){//only checking arrays ar pos [0][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[0][2]== " "){
+                        l1[0][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] == " "){
+                        l2[0][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] != " " && l3[0][2] == " "){
+                        l3[0][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[0][2] != " " && l2[0][2] != " " && l3[0][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 4){//only checking arrays ar pos [1][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][0]== " "){
+                        l1[1][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] == " "){
+                        l2[1][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] != " " && l3[1][0] == " "){
+                        l3[1][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][0] != " " && l2[1][0] != " " && l3[1][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 5){//only checking arrays ar pos [1][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][1]== " "){
+                        l1[1][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] == " "){
+                        l2[1][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] != " " && l3[1][1] == " "){
+                        l3[1][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][1] != " " && l2[1][1] != " " && l3[1][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 6){//only checking arrays ar pos [1][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[1][2]== " "){
+                        l1[1][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] == " "){
+                        l2[1][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] != " " && l3[1][2] == " "){
+                        l3[1][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[1][2] != " " && l2[1][2] != " " && l3[1][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 7){//only checking arrays ar pos [2][0]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][0]== " "){
+                        l1[2][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] == " "){
+                        l2[2][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] != " " && l3[2][0] == " "){
+                        l3[2][0] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][0] != " " && l2[2][0] != " " && l3[2][0] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 8){//only checking arrays ar pos [2][1]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][1]== " "){
+                        l1[2][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] == " "){
+                        l2[2][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] != " " && l3[2][1] == " "){
+                        l3[2][1] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][1] != " " && l2[2][1] != " " && l3[2][1] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            if(choice == 9){//only checking arrays ar pos [2][2]  1POINTS
+                chance = rand.nextInt(10);
+                if(chance>=6){//33% chance of making it
+                    if(l1[2][2]== " "){
+                        l1[2][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] == " "){
+                        l2[2][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] != " " && l3[2][2] == " "){
+                        l3[2][2] = "O";
+                        p2score+=1;
+                        System.out.println("Player 2 score is now: " + p2score);
+                    }
+                    else if(l1[2][2] != " " && l2[2][2] != " " && l3[2][2] != " "){
+                        System.out.println("Sorry this column is full!!!");
+                    }
+                }
+                else{
+                    System.out.println("Sorry looks like you missed!!!");
+                }
+            }
+            printcube_art(l1,l2,l3);
+
+            if(p1score>=13){
+                gamestate=false;
+                System.out.println("Congrats Player 1 is the winner!!!!");
+            }
+            if(p2score>=13){
+                gamestate=false;
+                System.out.println("Congrats Player 2 is the winner!!!!");
+            }
+
+
+        }//end of while loop
     }
+
+
     public static void greatwall(Scanner input)
     {
       // be the first to bounce nine balls into the wall closest to you.
@@ -863,11 +1724,11 @@ class BounceBattle
        
             if(choice == 1)
             {
-                Birdseyetictac();
+                Birdseyetictac(input);
             }
             if(choice == 2)
             {
-                lucky13();
+                lucky13(input);
             }
             if(choice == 3)
             {
